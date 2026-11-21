@@ -123,7 +123,7 @@ updateUI();
 });
 window.addEventListener("keydown", (ev) => {
 if (ev.key === "m" || ev.key === "M") muteBtn.click();
-else if (ev.key === " ") { ev.preventDefault(); (); }
+else if (ev.key === " ") { ev.preventDefault(); motionBtn.click(); }
 else if (ev.key === "~" || ev.key === "`") submitGesture("WAVE");
 else if (ev.key === "o" || ev.key === "O") submitGesture("CIRCLE");
 else if (ev.key === "/") { ev.preventDefault(); submitGesture("SLASH"); }
