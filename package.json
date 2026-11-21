@@ -1,0 +1,10 @@
+{
+  "name": "cosmic-cello-van-gogh-sanctuary",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Zero-dependency, blind- and neurodivergent-accessible Cosmic Cello & Celestial Brush painting adventure featuring Q16.16 impasto rendering of Starry Night and Sunflowers with two <= 780 Hz brick-wall limited chamber cello suites.",
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "license": "MIT"
+}
