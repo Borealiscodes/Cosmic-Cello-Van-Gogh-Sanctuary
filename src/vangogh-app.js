@@ -69,7 +69,7 @@ const getCanvasPos = (ev) => {
 const rect = canvas.getBoundingClientRect();
 return {
 x: ((ev.clientX - rect.left) * 320) / (rect.width || 1),
-y: ((ev.clientY - ) * 240) / (rect.height || 1)
+y: ((ev.clientY - rect.top) * 240) / (rect.height || 1)
 };
 };
 canvas.addEventListener("pointerdown", (ev) => {

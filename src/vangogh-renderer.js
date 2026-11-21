@@ -110,8 +110,8 @@ if (completedInChapter >= 4) {
 const bursts = Array.of({ cx: 56, cy: 44 }, { cx: 196, cy: 52 }, { cx: 268, cy: 42 });
 for (const b of bursts) {
 for (let k = -24; k <= 24; k += 1) {
-if ( + k >= 0 &&  + k < w) buf32[ * w + (b.cx + k)] = packRGB555(255, 248, 190, b.cx + k, );
-if (b.cy + k >= 0 && b.cy + k < h) buf32[(b.cy + k) * w + b.cx] = packRGB555(255, 248, 190, b.cx, b.cy + k);
+          if (b.cx + k >= 0 && b.cx + k < w) buf32[b.cy * w + (b.cx + k)] = packRGB555(255, 248, 190, b.cx + k, b.cy);
+          if (b.cx + k >= 0 && b.cx + k < w) buf32[b.cy * w + (b.cx + k)] = packRGB555(255, 248, 190, b.cx + k, b.cy);
 }
 }
 }
