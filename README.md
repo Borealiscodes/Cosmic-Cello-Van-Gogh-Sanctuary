@@ -32,7 +32,7 @@ Switch freely between both self-contained canvases via the top story tabs or key
 
 ---
 
-## ♿ Accessibility & Neurodivergent Sensory Guardrails
+## Accessibility & Neurodivergent Sensory Guardrails
 
 * **Full Input Parity:** Draw directly on the `320×240` canvas with touch, stylus, or mouse—or use high-contrast buttons and single-key shortcuts (**`~` Wave**, **`O` Circle**, **`/` Slash**, **`+` Cross**) which stamp matching impasto strokes onto the persistent pigment buffer (`pigmentBuf`).
 * **Sensory-Safe Audio (`M` to Unmute):** Boots strictly muted, avoids rigid metronomic beats in favor of breath-paced phrases, filters all harmonics below **`760 Hz`**, and terminates with a **`DynamicsCompressorNode` brick-wall limiter** (`-20 dB` threshold, `20:1` ratio).
