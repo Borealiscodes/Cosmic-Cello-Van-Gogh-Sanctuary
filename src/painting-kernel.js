@@ -1,152 +1,99 @@
 /**
- * src/painting-kernel.js — State Machine for Starry Night & Sunflowers Painting Adventure
+ * src/painting-kernel.js — Separate Selectable 8-Stage Additive Painting Stories
  */
 
-export const PAINTING_CHAPTERS = Array.of(
+export const PAINTING_STORIES = Array.of(
   {
     id: "starry-night",
-    title: "Chapter I: Starry Night (Saint-Rémy Nocturne)",
-    suiteName: "Suite I: Nocturne in G Major (Inspired by Vincent)",
+    tabLabel: "Story I: Starry Night",
+    title: "Story I: Starry Night (Saint-Rémy Nocturne)",
+    suiteName: "Suite I: Nocturne in G Major (Lyric Baritone Cello & Harp)",
     steps: Array.of(
-      {
-        shape: "WAVE",
-        key: "~",
-        label: "Sweep Swirling Wind Currents (~ Wave)",
-        prompt: "Draw a flowing wave (~) across the night sky to awaken the cobalt wind currents and solo baritone cello.",
-        completedText: "Cobalt and ultramarine wind currents swirl across the sky; the solo baritone cello enters in G Major."
-      },
-      {
-        shape: "CIRCLE",
-        key: "O",
-        label: "Paint Crescent Moon & Stars (O Circle)",
-        prompt: "Draw a closed circle (O) to ignite the glowing golden stars and crescent moon with fingerpicked harp arpeggios.",
-        completedText: "Golden stars and crescent moon ignite in additive light; fingerpicked harp arpeggios weave beneath the cello."
-      },
-      {
-        shape: "SLASH",
-        key: "/",
-        label: "Raise the Cypress Tree (/ Slash)",
-        prompt: "Draw a tall upward slash (/) to raise the dark cypress tree and summon the warm string quartet pad.",
-        completedText: "The deep emerald cypress rises toward the stars; warm chamber strings and pizzicato bass join the nocturne."
-      },
-      {
-        shape: "CROSS",
-        key: "+",
-        label: "Kindle Village Starlight (+ Cross)",
-        prompt: "Draw two intersecting strokes (+) to kindle radiant starlight bursts and complete Suite I.",
-        completedText: "Starlight bursts shimmer above the sleeping village; soft celesta chimes complete the Starry Night nocturne."
-      }
+      { shape: "WAVE", key: "~", color:, prompt: "1/8 — Sweep a cobalt wave (~) across the sky to lay the deep ultramarine underpainting." },
+      { shape: "WAVE", key: "~", color:, prompt: "2/8 — Sweep a second wave (~) to carve twin spiral wind vortices across the heavens." },
+      { shape: "CIRCLE", key: "O", color:, prompt: "3/8 — Paint a golden circle (O) to ignite the luminous crescent moon on the upper right." },
+      { shape: "CIRCLE", key: "O", color:, prompt: "4/8 — Paint another circle (O) to scatter glowing star halos across the night sky." },
+      { shape: "WAVE", key: "~", color:, prompt: "5/8 — Draw a rolling wave (~) along the horizon to shape the distant Alpilles mountains." },
+      { shape: "SLASH", key: "/", color:, prompt: "6/8 — Draw an upward slash (/) to raise the flame-like emerald cypress tree in the foreground." },
+      { shape: "SLASH", key: "/", color:, prompt: "7/8 — Draw a gentle slash (/) to light the warm cottage windows and church spire below." },
+      { shape: "CROSS", key: "+", color:, prompt: "8/8 — Draw a starlight cross (+) to crown the night with shimmering impasto radiance." }
     )
   },
   {
     id: "sunflowers",
-    title: "Chapter II: Sunflowers (Arles Golden Still Life)",
-    suiteName: "Suite II: Pastoral Aria in D Major (Inspired by Mr. Tanner)",
+    tabLabel: "Story II: Sunflowers",
+    title: "Story II: Sunflowers (Arles Golden Still Life)",
+    suiteName: "Suite II: Pastoral Aria in D Major (Lyric Cello & Acoustic Strings)",
     steps: Array.of(
-      {
-        shape: "SLASH",
-        key: "/",
-        label: "Shape Vase & Stems (/ Slash)",
-        prompt: "Draw a steady slash (/) to shape the earthenware vase and ochre stems as the lyric baritone cello begins.",
-        completedText: "Terracotta vase and olive-ochre stems emerge on warm washi parchment; the lyric baritone cello opens Suite II."
-      },
-      {
-        shape: "CIRCLE",
-        key: "O",
-        label: "Crown the Seed Heads (O Circle)",
-        prompt: "Draw a closed circle (O) to form the rich sienna seed crowns with pizzicato upright bass accompaniment.",
-        completedText: "Burnt-sienna seed crowns bloom across the bouquet; pizzicato bass and acoustic chords establish a gentle pulse."
-      },
-      {
-        shape: "WAVE",
-        key: "~",
-        label: "Curl Cadmium Petals (~ Wave)",
-        prompt: "Draw a curling wave (~) to unfurl golden cadmium petals and bring in muted chamber strings.",
-        completedText: "Golden cadmium petals unfurl in warm impasto; muted chamber strings and woodwind pads swell behind the cello."
-      },
-      {
-        shape: "CROSS",
-        key: "+",
-        label: "Bathe in Afternoon Sun (+ Cross)",
-        prompt: "Draw two intersecting strokes (+) to bathe the canvas in afternoon sunlight and complete the gallery.",
-        completedText: "Warm afternoon sunlight bathes the Sunflowers still life; the full pastoral chamber ensemble resolves in D Major."
-      }
+      { shape: "WAVE", key: "~", color:, prompt: "1/8 — Sweep a warm ochre wave (~) to texture the sunlit Arles studio wall and table." },
+      { shape: "SLASH", key: "/", color:, prompt: "2/8 — Draw a steady slash (/) to shape the two-toned terracotta earthenware vase." },
+      { shape: "SLASH", key: "/", color:, prompt: "3/8 — Draw upward slashes (/) to grow sturdy olive-green stems rising from the vase." },
+      { shape: "CIRCLE", key: "O", color:, prompt: "4/8 — Paint a circle (O) to form the rich burnt-sienna seed crowns at the center of each bloom." },
+      { shape: "WAVE", key: "~", color:, prompt: "5/8 — Sweep a curling wave (~) to unfurl the inner ring of cadmium-yellow petals." },
+      { shape: "WAVE", key: "~", color:, prompt: "6/8 — Sweep another wave (~) to layer bright lemon-gold outer impasto petals." },
+      { shape: "CIRCLE", key: "O", color:, prompt: "7/8 — Paint a small circle (O) to stipple dark umber seed spirals and leafy accents." },
+      { shape: "CROSS", key: "+", color:, prompt: "8/8 — Draw a sunlit cross (+) to bathe the finished Sunflowers bouquet in afternoon warmth." }
     )
   }
 );
 
-export function createPaintingState() {
-  const ch = PAINTING_CHAPTERS.at(0);
-  const st = ch.steps.at(0);
+export function createStoryState(storyIndex = 0) {
+  const idx = storyIndex === 1 ? 1 : 0;
+  const story = PAINTING_STORIES.at(idx);
   return {
-    chapterIndex: 0,
+    storyIndex: idx,
     stepIndex: 0,
-    orchestraLayers: 0,
-    completedPaintings: 0,
-    strokeHistory: Array.of(),
-    narration: ch.title + " — " + st.prompt
+    completedSteps: 0,
+    isComplete: false,
+    narration: story.title + " — " + story.steps.at(0).prompt
   };
 }
 
-export function applyPaintingStroke(state, detectedShape) {
-  const ch = PAINTING_CHAPTERS.at(state.chapterIndex);
-  const st = ch.steps.at(state.stepIndex);
+export function applyStoryGesture(state, detectedShape) {
+  const story = PAINTING_STORIES.at(state.storyIndex);
+  if (state.isComplete) {
+    return {
+      ...state,
+      narration: story.title + " is complete. Continue adding freehand impasto brushstrokes or switch stories anytime."
+    };
+  }
 
+  const step = story.steps.at(state.stepIndex);
   if (!detectedShape || detectedShape === "NONE") {
     return {
       ...state,
-      narration: "Brush touches the parchment softly. " + st.prompt
+      narration: "Gentle brush touch on canvas. " + step.prompt
     };
   }
 
-  if (detectedShape !== st.shape) {
+  if (detectedShape !== step.shape) {
     return {
       ...state,
-      narration: "Gentle hint: you drew a " + detectedShape + ". " + st.prompt
+      narration: "You painted a " + detectedShape + " stroke. For the next layer: " + step.prompt
     };
   }
 
-  const nextLayer = state.stepIndex + 1;
-  const nextHistory = state.strokeHistory.concat(detectedShape);
-
-  if (state.stepIndex < ch.steps.length - 1) {
-    const nextStep = ch.steps.at(state.stepIndex + 1);
+  const nextCompleted = state.completedSteps + 1;
+  if (state.stepIndex < story.steps.length - 1) {
+    const nextStep = story.steps.at(state.stepIndex + 1);
     return {
       ...state,
       stepIndex: state.stepIndex + 1,
-      orchestraLayers: nextLayer,
-      strokeHistory: nextHistory,
-      narration: st.completedText + " Next: " + nextStep.prompt
-    };
-  }
-
-  if (state.chapterIndex < PAINTING_CHAPTERS.length - 1) {
-    const nextCh = PAINTING_CHAPTERS.at(state.chapterIndex + 1);
-    const nextSt = nextCh.steps.at(0);
-    return {
-      ...state,
-      chapterIndex: state.chapterIndex + 1,
-      stepIndex: 0,
-      orchestraLayers: 1,
-      completedPaintings: state.completedPaintings + 1,
-      strokeHistory: nextHistory,
-      narration: st.completedText + " Now entering " + nextCh.title + ". " + nextSt.prompt
+      completedSteps: nextCompleted,
+      narration: "Layer " + nextCompleted + "/8 painted. " + nextStep.prompt
     };
   }
 
   return {
     ...state,
-    orchestraLayers: 4,
-    completedPaintings: 2,
-    strokeHistory: nextHistory,
-    narration: st.completedText + " Both Starry Night and Sunflowers are complete in full chamber cello harmony."
+    completedSteps: 8,
+    isComplete: true,
+    narration: story.title + " complete (8/8 layers). Rest in the full chamber cello arrangement or keep painting freely."
   };
 }
 
-export function paintingProgressBraille(state) {
-  const totalSteps = 8;
-  const done = state.chapterIndex * 4 + (state.completedPaintings >= 2 ? 4 : state.stepIndex);
+export function storyProgressBraille(state) {
   const levels = Array.of(0x2800, 0x2840, 0x2844, 0x2846, 0x2847, 0x28c7, 0x28e7, 0x28f7, 0x28ff);
-  const idx = Math.max(0, Math.min(8, Math.round((done / totalSteps) * 8)));
+  const idx = Math.max(0, Math.min(8, state.completedSteps));
   return String.fromCodePoint(levels.at(idx)).repeat(5);
 }

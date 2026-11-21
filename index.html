@@ -10,19 +10,24 @@
   <main class="gallery-column">
     <header>
       <h1>Cosmic Cello & Celestial Brush Sanctuary</h1>
-      <div id="hud-status">Chapter I: Starry Night • Suite I: Nocturne in G Major • Orchestra Layers: 0/4</div>
+      <div id="hud-status">Story I: Starry Night • Suite I: Nocturne in G Major • Layers: 0/8</div>
     </header>
-    <div class="controls-row" role="region" aria-label="Sanctuary Audio and Motion Controls">
+    <div class="controls-row" role="tablist" aria-label="Select Painting Story">
+      <button id="btn-story-1" type="button" class="active">Story I: Starry Night (Key 1)</button>
+      <button id="btn-story-2" type="button">Story II: Sunflowers (Key 2)</button>
+    </div>
+    <div class="controls-row" role="region" aria-label="Audio, Motion and Canvas Controls">
       <button id="btn-mute" type="button">Unmute Chamber Cello (M)</button>
       <button id="btn-motion" type="button" class="active">Motion: Playing (Space)</button>
-      <button id="btn-reset" type="button">Begin Again</button>
+      <button id="btn-clear-pigment" type="button">Wipe Hand Strokes</button>
+      <button id="btn-reset" type="button">Restart Story</button>
     </div>
     <div class="canvas-frame">
       <canvas id="vangogh-canvas" width="320" height="240" aria-label="320 by 240 Q16.16 Celestial Brush Impasto Canvas"></canvas>
     </div>
     <div id="braille-meter" class="braille-row" aria-hidden="true">⠀⠀⠀⠀⠀</div>
     <div id="gesture-deck" class="gesture-deck" role="group" aria-label="Accessible Brush Stroke Controls"></div>
-    <div id="narrative-voice" class="voice-box" role="status" aria-live="polite">Chapter I: Starry Night (Saint-Rémy Nocturne) — Draw a flowing wave (~) across the night sky to awaken the cobalt wind currents and solo baritone cello.</div>
+    <div id="narrative-voice" class="voice-box" role="status" aria-live="polite">Story I: Starry Night (Saint-Rémy Nocturne) — 1/8 Sweep a cobalt wave (~) across the sky to lay the deep ultramarine underpainting.</div>
   </main>
   <script type="module" src="src/vangogh-app.js"></script>
 </body>
