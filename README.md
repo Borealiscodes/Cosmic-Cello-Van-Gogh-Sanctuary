@@ -1,6 +1,6 @@
 # 🎨 Cosmic Cello & Celestial Brush Sanctuary (`Starry Night` & `Sunflowers`)
 
-**A zero-dependency, blind- and neurodivergent-accessible painting adventure uniting deterministic `Q16.16` `RGB555` Bayer-dithered impasto rendering, Celestial Brush stroke recognition (`WAVE`, `CIRCLE`, `SLASH`, `CROSS`), persistent additive user pigment layers, 5-cell Unicode Braille progress parity, and two phrased, `<= 760 Hz` brick-wall limited chamber cello suites.**
+**A zero-dependency, neurodivergent-friendly painting adventure uniting deterministic `Q16.16` `RGB555` Bayer-dithered impasto rendering, Celestial Brush stroke recognition (`WAVE`, `CIRCLE`, `SLASH`, `CROSS`), persistent additive user pigment layers, 5-cell Unicode Braille progress parity, and two phrased, `<= 760 Hz` brick-wall limited chamber cello suites.**
 
 [![License: MIT](https://shields.io)](LICENSE)
 [![Tests: 3/3 Passing](https://shields.io)](test/vangogh-sanctuary.test.mjs)
@@ -17,7 +17,7 @@
 
 ## 🌌 Emergent Aesthetic Note: Where Folk Ballad Meets 16-Bit Dithering
 
-Originally envisioned as a solemn folk-ballad cello accompaniment inspired by Don McLean's *"Vincent"* and Harry Chapin's *"Mr. Tanner,"* synthesizing the entire experience through a **`320×240` `RGB555` Bayer-dithered framebuffer** and a **`760 Hz` low-pass filtered `4.8 Hz` vibrato triangle-oscillator engine** produced something far more authentic to its medium: an eerie, cozy, late-night ***Courage the Cowardly Dog* meets 1996 PlayStation** atmosphere. Rather than masking this with pre-recorded audio files, `v2.0.0` embraces its handmade, zero-asset character.
+Originally envisioned as a solemn folk-ballad cello accompaniment inspired by Don McLean's *"Vincent"* and Harry Chapin's *"Mr. Tanner,"* synthesizing the entire experience through a **`320×240` `RGB555` Bayer-dithered framebuffer** and a **`760 Hz` low-pass filtered `4.8 Hz` vibrato triangle-oscillator engine** produced something far more authentic to its medium: an eerie, cozy, late-night ***Courage the Cowardly Dog* meets 1996 PlayStation** atmosphere. Rather than masking this with pre-recorded audio files, `v1.0.0` embraces its handmade, zero-asset character.
 
 ---
 
@@ -27,16 +27,16 @@ Switch freely between both self-contained canvases via the top story tabs or key
 
 | Story | Canvas & Atmosphere | 8 Additive Impasto Layers | Phrased Chamber Suite (`<= 760 Hz`) |
 | :--- | :--- | :--- | :--- |
-| **Story I** (`Key 1`) | ***Starry Night*** *(Saint-Rémy Nocturne)* | `1.` Cobalt underpainting (`~`) → `2.` Twin spiral wind vortices (`~`) → `3.` Crescent moon (`O`) → `4.` Star halos (`O`) → `5.` Alpilles mountains (`~`) → `6.` Flame cypress (`/` ) → `7.` Village & church spire (`/`) → `8.` Starlight bursts (`+`) | **Suite I: *Nocturne in G Major*** — Breath-paced `4.8 Hz` vibrato baritone cello, sine-wave harp plucks (`Layers 3+`), and octave bass pedal (`Layers 6+`) with natural cadential rests. |
+| **Story I** (`Key 1`) | ***Starry Night*** *(Saint-Rémy Nocturne)* | `1.` Cobalt underpainting (`~`) → `2.` Twin spiral wind vortices (`~`) → `3.` Crescent moon (`O`) → `4.` Star halos (`O`) → `5.` Alpilles mountains (`~`) → `6.` Flame cypress (`/`) → `7.` Village & church spire (`/`) → `8.` Starlight bursts (`+`) | **Suite I: *Nocturne in G Major*** — Breath-paced `4.8 Hz` vibrato baritone cello, sine-wave harp plucks (`Layers 3+`), and octave bass pedal (`Layers 6+`) with natural cadential rests. |
 | **Story II** (`Key 2`) | ***Sunflowers*** *(Arles Golden Still Life)* | `1.` Ochre studio wall & table (`~`) → `2.` Two-toned terracotta vase (`/`) → `3.` Olive stems (`/`) → `4.` Sienna seed crowns (`O`) → `5.` Inner cadmium petals (`~`) → `6.` Outer lemon-gold petals (`~`) → `7.` Umber seed spirals (`O`) → `8.` Afternoon sunbeams (`+`) | **Suite II: *Pastoral Aria in D Major*** — Lyric baritone cello phrasing in `D` Major with warm acoustic harp/bass accompaniment and brick-wall dynamic limiting. |
 
 ---
 
-## Accessibility & Neurodivergent Sensory Guardrails
+## 🛡️ Sensory & Input Guardrails (Honest Baseline Scope)
 
-* **Full Input Parity:** Draw directly on the `320×240` canvas with touch, stylus, or mouse—or use high-contrast buttons and single-key shortcuts (**`~` Wave**, **`O` Circle**, **`/` Slash**, **`+` Cross**) which stamp matching impasto strokes onto the persistent pigment buffer (`pigmentBuf`).
+* **Keyboard, Button & Pointer Brush Parity:** Draw directly on the `320×240` canvas with touch, stylus, or mouse—or use high-contrast buttons and single-key shortcuts (**`~` Wave**, **`O` Circle**, **`/` Slash**, **`+` Cross**) which stamp matching impasto strokes onto the persistent pigment buffer (`pigmentBuf`). *(Note: Because this is a visual impasto painting canvas without spatial perimeter sonification, it is scoped for sighted, low-vision, and neurodivergent players rather than claiming full non-visual/blind screen-reader parity.)*
 * **Sensory-Safe Audio (`M` to Unmute):** Boots strictly muted, avoids rigid metronomic beats in favor of breath-paced phrases, filters all harmonics below **`760 Hz`**, and terminates with a **`DynamicsCompressorNode` brick-wall limiter** (`-20 dB` threshold, `20:1` ratio).
-* **Reduced-Motion & Braille Parity:** Automatically honors `prefers-reduced-motion` on boot, toggles animation via **`Space`**, and updates both a **5-cell Unicode Braille progress meter (`U+2800–U+28FF`)** and `aria-live="polite"` poetic status captions.
+* **Reduced-Motion & Braille Progress Display:** Automatically honors `prefers-reduced-motion` on boot, toggles animation via **`Space`**, and updates both a **5-cell Unicode Braille progress meter (`U+2800–U+28FF`)** and `aria-live="polite"` poetic status captions.
 
 ---
 
